@@ -1,8 +1,15 @@
 function firstWord(s) {
   // your code here
-	const s2 = s.indexOf(" ");
-	const s3 = s2 === -1 ? s : s.substring(0, s2);
-	return s3;
+	const trimmedStr = s.trim();
+    const spaceIndex = trimmedStr.indexOf(' ');
+
+    // If there's no space, return the entire string
+    if (spaceIndex === -1) {
+        return trimmedStr;
+    }
+
+    // Otherwise, return the substring up to the first space
+    return trimmedStr.substring(0, spaceIndex);
 }
 
 // Do not change the code below
